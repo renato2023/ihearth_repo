@@ -1,0 +1,22 @@
+# Participant data from the external validation must never be committed
+pacientes_100.csv
+**/pacientes*.csv
+
+# Secrets
+.env
+**/.env
+**/google-services.json
+**/key.properties
+**/*.keystore
+**/*.jks
+
+# Build outputs
+build/
+**/build/
+.dart_tool/
+**/.dart_tool/
+*.apk
+__pycache__/
+.ipynb_checkpoints/
+venv/
+.venv/

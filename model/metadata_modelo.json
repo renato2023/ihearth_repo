@@ -1,0 +1,95 @@
+{
+  "model_name": "CardioFL_Global_Model",
+  "version": "1.0.0",
+  "created_at": "2026-11-09T13:09:13.780879",
+  "framework": "TensorFlow 2.22.0-rc0",
+  "algorithm": "Federated Averaging (FedAvg)",
+  "fl_rounds": 20,
+  "n_clients": 5,
+  "local_epochs": 5,
+  "input_features": [
+    "Age",
+    "Weight",
+    "Length",
+    "Sex",
+    "BMI",
+    "DM",
+    "HTN",
+    "Current Smoker",
+    "EX-Smoker",
+    "FH",
+    "Obesity",
+    "CRF",
+    "CVA",
+    "Airway disease",
+    "Thyroid Disease",
+    "CHF",
+    "DLP",
+    "BP",
+    "PR",
+    "Edema",
+    "Typical Chest Pain",
+    "Dyspnea",
+    "Atypical",
+    "Nonanginal",
+    "Age_Group",
+    "BMI_Category",
+    "Risk_Score",
+    "Comorbidity_Count",
+    "Symptom_Index",
+    "HTN_DM_Interaction",
+    "BP_Age_Ratio",
+    "High_Risk"
+  ],
+  "n_features": 32,
+  "architecture": {
+    "hidden_layers": [
+      128,
+      64,
+      32
+    ],
+    "activation": "relu"
+  },
+  "hyperparameters": {
+    "input_dim": 32,
+    "hidden_units": [
+      128,
+      64,
+      32
+    ],
+    "dropout_rates": [
+      0.3,
+      0.25,
+      0.2
+    ],
+    "l2_reg": 0.0001,
+    "learning_rate": 0.001,
+    "batch_size": 16,
+    "local_epochs": 5,
+    "fl_rounds": 20,
+    "num_clients": 5,
+    "activation": "relu",
+    "optimizer": "Adam",
+    "loss": "binary_crossentropy"
+  },
+  "evaluation": {
+    "Accuracy": 0.8689,
+    "Precision": 0.8723,
+    "Recall": 0.9535,
+    "F1-Score": 0.9111,
+    "ROC-AUC": 0.8178,
+    "Specificity": 0.6667
+  },
+  "classes": {
+    "0": "Normal",
+    "1": "CAD"
+  },
+  "threshold": 0.5,
+  "preprocessing": {
+    "scaler": "StandardScaler",
+    "fit_on": "train_only"
+  },
+  "tflite_compatible": true,
+  "api_ready": true,
+  "notes": "Modelo entrenado mediante FL para preservación de privacidad. Compatible con FastAPI + Flutter."
+}
